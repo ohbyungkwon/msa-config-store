@@ -1,3 +1,8 @@
 jwt:
-  secret: user-token-dev-bus
+  secret: '{cipher}3b195618f3ee68fd35fad31f6c651971b54b23051fd4f038db906730519ad36df5162690df7ce88278574a691b099bca'
 
+rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: '{cipher}b879342222bd5b0d33641c640526196977114bedad733236d34bd018a18fe250'
