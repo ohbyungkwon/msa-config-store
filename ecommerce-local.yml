@@ -1,3 +1,6 @@
+encrypt:
+  key: obk-msa-pro-key
+
 spring:
   rabbitmq:
     host: localhost
