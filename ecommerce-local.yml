@@ -1,6 +1,3 @@
-jwt:
-  secret: '{cipher}c9f6f373ceb3fd87a9a4fa04e1ebdbaf65229430bcfee73d11ce8c30dce4b1831b3017269b1501cff388990712d786d2'
-
 spring:
   rabbitmq:
     host: localhost
