@@ -2,11 +2,11 @@ encrypt:
   key: obk-msa-pro-key
 
 spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: '{cipher}b879342222bd5b0d33641c640526196977114bedad733236d34bd018a18fe250'
+#   rabbitmq:
+#     host: localhost
+#     port: 5672
+#     username: guest
+#     password: '{cipher}b879342222bd5b0d33641c640526196977114bedad733236d34bd018a18fe250'
   datasource:
     driverClassName: org.h2.Driver
     url: jdbc:h2:tcp://localhost/~/test
