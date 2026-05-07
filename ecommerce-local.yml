@@ -13,6 +13,16 @@ spring:
     username: sa
     password:
 
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
 user-service: 
   url: http://USERMICROSERVICE/user-service
 
@@ -21,3 +31,13 @@ product-service:
 
 order-service: 
   url: http://ORDERMICROSERVICE/order-service
+
+micro:
+  auth:
+    exclude-auth-urls: /user
+    exclude-xss-urls:
+
+welcome:
+  message: This is micro ${spring.application.name}
+
+  
