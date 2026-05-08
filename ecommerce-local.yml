@@ -32,6 +32,9 @@ product-service:
 order-service: 
   url: http://ORDERMICROSERVICE/order-service
 
+notification-service: 
+  url: http://NOTIFICATIONMICROSERVICE/notification-service
+
 welcome:
   message: This is micro ${spring.application.name}
 
