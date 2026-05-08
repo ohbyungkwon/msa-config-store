@@ -32,11 +32,6 @@ product-service:
 order-service: 
   url: http://ORDERMICROSERVICE/order-service
 
-micro:
-  auth:
-    exclude-auth-urls: /user
-    exclude-xss-urls:
-
 welcome:
   message: This is micro ${spring.application.name}
 
