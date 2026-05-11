@@ -35,6 +35,17 @@ order-service:
 notification-service: 
   url: http://NOTIFICATIONMICROSERVICE/notification-service
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0  # 추적 데이터 수집 비율 (1.0 = 100%)
+  zipkin:
+    tracing:
+      endpoint: "http://your-zipkin-server:9411/api/v2/spans"
+  observations:
+    key-values:
+      application: ${spring.application.name} # Zipkin에서 서비스명 식별용
+      
 welcome:
   message: This is micro ${spring.application.name}
 
