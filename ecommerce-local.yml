@@ -2,17 +2,22 @@ encrypt:
   key: obk-msa-pro-key
 
 spring:
-#   rabbitmq:
-#     host: localhost
-#     port: 5672
-#     username: guest
-#     password: '{cipher}b879342222bd5b0d33641c640526196977114bedad733236d34bd018a18fe250'
   datasource:
     driverClassName: org.h2.Driver
     url: jdbc:h2:tcp://localhost/~/test
     username: sa
     password:
-
+  cloud:
+    bus:
+      enabled: true
+      destination: msa-bus-topic # Kafka의 토픽 이름이 됩니다.
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092 # Kafka 서버 주소
+  kafka:
+    bootstrap-servers: localhost:9092
+    
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -38,13 +43,17 @@ notification-service:
 management:
   tracing:
     sampling:
-      probability: 1.0  # 추적 데이터 수집 비율 (1.0 = 100%)
+      probability: 1.0
   zipkin:
     tracing:
       endpoint: "http://localhost:9411/api/v2/spans"
-  observations:
+  observation:
     key-values:
-      application: ${spring.application.name} # Zipkin에서 서비스명 식별용
+      application: ${spring.application.name}
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 추적 현황 확인을 위해 전체 노출 권장
       
 welcome:
   message: This is micro ${spring.application.name}
