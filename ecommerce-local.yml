@@ -10,13 +10,13 @@ spring:
   cloud:
     bus:
       enabled: true
-      destination: msa-bus-topic # Kafka의 토픽 이름이 됩니다.
+      destination: msa-bus-topic
     stream:
       kafka:
         binder:
-          brokers: localhost:9092 # Kafka 서버 주소
+          brokers: localhost:29092
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: localhost:29092
     
 eureka:
   instance:
